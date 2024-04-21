@@ -16,6 +16,15 @@ knitr::opts_chunk$set(echo = FALSE)
 getwd()
 wav_fp <- "www/audio/nips4b_birds_testfile0006.wav"
 file.exists(wav_fp)
+# dir("www", recursive = TRUE)
+
+
+table_fp <- "www/tables/annotation_train006.txt"
+
+tab <- read.table(table_fp, sep = "\t")
+sp1 <-  "Cicada"
+
+
 
 ```
 
@@ -25,26 +34,40 @@ file.exists(wav_fp)
 
 ```{r, echo=FALSE}
 textInput("dataFolder", "data", value = "", width = NULL, placeholder = NULL)
-sliderInput("bins", "Number of bins:", min = 1, max = 50, value = 30)
-plotOutput("distPlot")
+
+# sliderInput("bins", "Number of bins:", min = 1, max = 50, value = 30)
+# plotOutput("distPlot")
 
 verbatimTextOutput("dataFolder")
 
-tags$audio(src = "www/audio/nips4b_birds_testfile0006.wav", type = "audio/wav", autoplay = NA, controls = NA)
-#tags$audio(src = wav_fp, type = "audio/wav", autoplay = NA, controls = NA)
+tags$audio(src = "www/audio/nips4b_birds_testfile0006.wav", type = "audio/wav", controls = NA)
+
+tags$audio(src = wav_fp, type = "audio/wav", controls = NA)
 
 ```
 
 ```{r, context="server"}
-output$distPlot <- renderPlot({
-  x <- faithful[, 2]  # Old Faithful Geyser data
-  bins <- seq(min(x), max(x), length.out = input$bins + 1)
-  hist(x, breaks = bins, col = 'darkgray', border = 'white')
-  
-})
+# output$distPlot <- renderPlot({
+#   x <- faithful[, 2]  # Old Faithful Geyser data
+#   bins <- seq(min(x), max(x), length.out = input$bins + 1)
+#   hist(x, breaks = bins, col = 'darkgray', border = 'white')
+#   
+# })
 
 output$dataFolder <- renderText({input$dataFolder})
 
 ```
 
+
+```{r question}
+
+
+question_text(
+  "Enter species below:",
+  answer(sp1, correct = TRUE),
+  allow_retry = TRUE,
+  trim = TRUE
+)
+
+```
 
