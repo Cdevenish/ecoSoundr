@@ -1,0 +1,6 @@
+0	2.687709751	Tettigettula pygmea, Pygmy Cicada
+0.255102041	0.289795919	Pholidoptera femorata, Fallow Bush-cricket
+0.302040816	0.342857143	Pholidoptera femorata, Fallow Bush-cricket
+1.481632653	1.528571429	Pholidoptera femorata, Fallow Bush-cricket
+1.559183673	1.604081632	Pholidoptera femorata, Fallow Bush-cricket
+1.614285714	1.651020408	Pholidoptera femorata, Fallow Bush-cricket

@@ -1,0 +1,9 @@
+0.267029478	0.342494331	Erithacus rubecula, European Robin
+0.446984127	0.592108844	Erithacus rubecula, European Robin
+0.766258503	0.893968254	Erithacus rubecula, European Robin
+0.777868481	1.329342404	Turdus merula, Common Blackbird
+0.963628118	1.039092971	Erithacus rubecula, European Robin
+1.137777778	2.316190476	Prunella modularis, Dunnock
+2.34521542	3.08244898	Turdus merula, Common Blackbird
+3.779047619	4.353741497	Turdus merula, Common Blackbird
+3.871927438	5.003900227	Prunella modularis, Dunnock

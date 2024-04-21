@@ -1,0 +1,9 @@
+0.095782313	0.140770975	Unknown
+0.220589569	0.464399093	Buteo buteo, Common Buzzard
+0.592108844	0.615328799	Erithacus rubecula, European Robin
+0.825759637	0.851882086	Erithacus rubecula, European Robin
+1.584761905	1.985306123	Buteo buteo, Common Buzzard
+2.265396825	2.285714285	Erithacus rubecula, European Robin
+2.356825397	2.558548753	Periparus ater, Coal Tit
+2.478730159	2.525170068	Erithacus rubecula, European Robin
+3.601995465	3.838548753	Unknown

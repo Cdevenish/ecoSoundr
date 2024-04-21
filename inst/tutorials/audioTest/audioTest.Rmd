@@ -1,0 +1,92 @@
+---
+title: "Tutorial"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Topic 1
+
+```{r check}
+getwd()
+
+file.exists("nips4b_birds_testfile0006.wav")
+
+file.exists("../../audio/nips4b_birds_testfile0006.wav")
+dir("../../audio")
+
+dir("C:/Users/ggc34/OneDrive - University of Keele/Documents/Keele_academic/data/test_audio")
+wav_fp <- "C:/Users/ggc34/OneDrive - University of Keele/Documents/Keele_academic/data/test_audio/nips4b_birds_testfile0006.wav"
+file.exists(wav_fp)
+
+```
+
+
+### Exercise 
+
+*Here's a simple exercise with an empty code chunk provided for entering the answer.*
+
+Write the R code required to add two plus two:
+
+```{r two-plus-two, exercise=TRUE}
+
+```
+
+
+```{r, echo=FALSE}
+textInput("dataFolder", "data", value = "", width = NULL, placeholder = NULL)
+sliderInput("bins", "Number of bins:", min = 1, max = 50, value = 30)
+plotOutput("distPlot")
+
+verbatimTextOutput("dataFolder")
+
+tags$audio(src = "nips4b_birds_testfile0006.wav", type = "audio/wav", autoplay = NA, controls = NA)
+#tags$audio(src = wav_fp, type = "audio/wav", autoplay = NA, controls = NA)
+
+```
+
+```{r, context="server"}
+output$distPlot <- renderPlot({
+  x <- faithful[, 2]  # Old Faithful Geyser data
+  bins <- seq(min(x), max(x), length.out = input$bins + 1)
+  hist(x, breaks = bins, col = 'darkgray', border = 'white')
+  
+})
+
+output$dataFolder <- renderText({input$dataFolder})
+
+```
+
+
+### Quiz
+
+```
+# tags$audio(src = "audio/nips4b_birds_testfile0006.wav", type = "audio/wav", autoplay = NA, controls = NA)
+```
+
+*You can include any number of single or multiple choice questions as a quiz. Use the `question` function to define a question and the `quiz` function for grouping multiple questions together.*
+
+Some questions to verify that you understand the purposes of various base and recommended R packages:
+
+```{r quiz}
+quiz(
+  question("Which package contains functions for installing other R packages?",
+    answer("base"),
+    answer("tools"),
+    answer("utils", correct = TRUE),
+    answer("codetools")
+  ),
+  question("Which of the R packages listed below are used to create plots?",
+    answer("lattice", correct = TRUE),
+    answer("tools"),
+    answer("stats"),
+    answer("grid", correct = TRUE)
+  )
+)
+```
+
